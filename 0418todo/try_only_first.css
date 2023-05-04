@@ -1,0 +1,22 @@
+@media screen and(max-width:767px)and (orientation:portrait){
+    body{
+        background-color:red;
+    }
+
+}
+@media screen and(max-width:767px)and (orientation:landscape){
+    body{
+        background-color:purple;
+    }
+
+}
+@media screen and (min-width:760px) and (max-width:959px){
+    body{
+        background-color:green;
+    }
+}
+@media screen and (min-width:960px){
+    body{
+        background-color:blue;
+    }
+}

@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style-type: none;
+    padding: 24px 0;
+    border-bottom:1px solid #c7c7c7;
+}
+.content{padding:16px}
+@media (orientation:portrait){
+    .left{display:none;}
+}
+@media (orientation:landscape){
+    .left{width:30%;float:left;}
+    .right{width:70%;float:right;}
+}

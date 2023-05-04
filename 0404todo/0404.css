@@ -1,0 +1,17 @@
+body{
+    background: #fff;
+}
+.right{
+    align-items: right;
+    float:right;
+    padding-top: 10%;
+}
+.red_box{
+    background-color: red;
+    padding:2%;
+}
+a{
+    color:black;
+    text-decoration:none;
+    display:block;
+}

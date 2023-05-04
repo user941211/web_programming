@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두번째 실습</title>
+    <link rel="stylesheet" type="text/css" href="web.css">
+    <style>
+        ul{overflow:hidden}
+        li{
+            list-style:none;
+            float:left;
+            padding:15px;
+        }
+        li:nth-child(2n){background-color:aqua}
+        li:nth-child(2n+1){background-color:green}
+        li:first-child{border-radius: 10px 0 0 10px;}
+        li:last-child{border-radius:0 10px 10px 0;}
+        li:nth-child(2 of .link){text-decoration:underline}
+        .boxes{
+            width:100px;
+            height:100px;
+            background-color:red;
+            border:1px;
+            border-radius:10px;
+            float:left;
+            margin-right:5%;
+            margin-left:3%
+        }
+        .blank{padding-top: 50px;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>내용</li>
+        <li class='link'>내용</li>
+        <li>내용</li>
+        <li>내용</li>
+        <li class='link'>내용</li>
+        <li>내용</li>
+        <li>내용</li>
+    </ul>
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+    <div class="blank"></div>
+    <a href="web_0328.html"><div class="box">0328실습으로 돌아가기</div></a>
+</body>
+</html>
