@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function min(array){
+            let minValue = array[0];
+            for(const item of array){
+                if(item < minValue){
+                    minValue=item;
+                }
+            }
+            return minValue;
+        }
+        console.log(typeof min);
+        console.log(min);
+        const testArray = [1,2,3,4,5,-6,7,8,10,9];
+        console.log(`${testArray} 중에서`);
+        console.log(`최솟값 = ${min(testArray)}`);
+        //console.log(`최솟값 = ${min(10)}`);
+        //배열을 숫자 하나만 불렀으니 문제가 생김.
+        function sample(items){
+            console.log(items);
+        }
+        //위는 맨 앞에 1개만 불러옴
+        function sample(...items){
+            console.log(items);
+        }
+        function minVARG(...array){
+            let minValue = array[0];
+            for(const item of array){
+                if(item < minValue){
+                    minValue=item;
+                }
+            }
+            return minValue;
+        }
+        //위는 (n) 전부 불러옴
+        sample(10);
+        sample(10,20);
+        sample(10,20,30);
+        sample([10,20,30],[10,20]);
+        sample('abc','asdf','sdafasdf');
+        console.log(`최솟값 = ${minVARG(10)}`);
+        console.log(`최솟값 = ${minVARG(10,-2,3,5,6,19)}`);
+        console.log(`최솟값 = ${minVARG([10,20,-30,40])}`);
+        function minVARG2(first, ...array){
+            let minValue, items;
+            if(Array.isArray(first)){
+                minValue = first[0];
+                items = first;
+            }else if(typeof(first) === 'number'){
+                minValue = first;
+                items = array;
+            }
+            for(const item of items){
+                if(item < minValue){
+                    minValue=item;
+                }
+            }
+            return minValue;
+        }
+        console.log(`최솟값 = ${minVARG2(10)}`);
+        console.log(`최솟값 = ${minVARG2(10,-2,3,5,6,19)}`);
+        console.log(`최솟값 = ${minVARG2([10,20,-30,40],[20,30,50,90])}`);
+
+        testArray.forEach(function(value, index){
+            console.log(`${index} 번째 요소 : ${value}`);
+        })
+        testArray.forEach(value => console.log(`${value*2}`))
+        testArray.forEach(function(value){
+            console.log(`${value*2}`)
+        })
+        testArray2 = testArray.map(function(value){
+            return value*2;
+        })
+        console.log(testArray);
+        console.log(testArray2);
+        testArray3 = testArray.map(value => value * 2);
+        console.log(testArray3);
+
+        evenNumbers = testArray.filter(function(value){
+            return value%2===0;
+        })
+        evenNumbers2 = testArray.filter(value => value%2 ===0)
+        console.log(evenNumbers);
+        console.log(evenNumbers2);
+
+        setTimeout(() =>{
+            console.log("1초 마다 표시됩니다.")
+        },1*1000);
+        let id;
+        let count=0;
+        id = setInterval(() => {
+            console.log(`1초마다 실행됩니다. ${count +1 }번째`);
+            count++
+        }, 1*1000);
+        
+        setTimeout(() => {
+            console.log('타이머를 종료합니다');
+            clearInterval(id);
+        },5*1000)
+    </script>
+</body>
+</html>
