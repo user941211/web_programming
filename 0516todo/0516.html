@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name="바나나";
+        const pet ={
+            name : "구름",
+            age : 4,
+            color : "흰색",
+            eat : function (food) {
+                alert(this.name + "이" + food + "를 먹습니다.");
+            }
+        }
+
+        pet.eat();
+        console.log(pet);
+        pet.bleed = "말티즈";
+        console.log(pet);
+        pet.getBleed = function(){
+            console.log("나의 품종은 " + this.bleed + "입니디.")
+        }
+        pet.getBleed();
+
+        delete pet.color;
+        console.log(pet);
+
+        
+    </script>
+</body>
+</html>
