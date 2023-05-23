@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const h1 = (text) => `<h1>${text}</h1>`
+    </script>
+    <script>
+        document.body.innerHTML += h1('1번째 js 태그')
+    </script>
+    <!--header에 있는 script 부분은 body가 생성 되었지 않기 때문에 의미가 없음-->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.innerHTML += h1(`1번째 js 태그`)
+            //const headers = document.querySelector('h1')
+            const headers = document.querySelectorAll('h1')
+
+            headers.forEach((header) => {
+                //header.textContent = 'HEADERS'
+                header.style.color = 'YELLOW'
+                header.style.backgroundColor = 'AQUA'
+            })
+            
+
+            const h1_1 = document.querySelector('#h1_1')
+            const h1_2 = document.querySelector('#h1_2')
+            h1_1.textContext = '<h1> textContent 속성 </h1>'
+            h1_2.innerHTML = '<h1> innerHTML 속성 </h1>'
+
+            const rects = document.querySelectorAll('.rect')
+            rects.forEach((rect,index) => {
+                const width = (index + 1 ) * 100
+                const src=`http://placekitten.com/${width}/250`
+                rect.setAttribute('src',src)
+            })
+
+            
+            //const del_h1 = document.querySelector('#h1_2')
+            //const_h1.parentNode.removeChild(del_h1)
+            let counter = 0
+            const h1_click = document.querySelector('#h1_click')
+
+            h1_click.addEventListener('click', (event) => {
+                counter++
+                h1_click.textContent = `클릭 횟수 : ${counter}`
+            })
+
+            const textarea = document.querySelector('textarea')
+            const h1_count = document.querySelector('#h1_count')
+
+            textarea.addEventListener('keyup', (event) => {
+                const length = textarea.value.length
+                h1_count.textContent = `글자 수 : ${length}`
+            })
+            
+            const select = document.querySelector('select')
+
+            select.addEventListener((change), (evnet) => {
+                const options = evnet.currentTarget.options
+                const index = evnet.currentTarget.options.selectedIndex
+
+                h1_count.textContent = `선택 : ${options[index].textContent}`
+            })
+        })
+    </script>
+    <!--header에 있는 addEventListener로 작업함-->
+    <style>
+        #h1_click{user-select:none;}
+    </style>
+</head>
+
+<body>
+    <h1 id="h1_click">클릭 횟수 : 0</h1>
+    <h1 id="h1_count">글자 수 : 0</h1>
+    <textarea></textarea>
+    <p></p>
+    <select>
+        <option>순대</option>
+        <option>오뎅</option>
+        <option>떡복이</option>
+        <option>튀김</option>
+        <option>콜라</option>
+    </select>
+    <script>
+        document.body.innerHTML += h1('2번째 js 태그')
+    </script>
+    <h1 id="h1_1">1번째 h1 태그</h1>
+    <script>
+        document.body.innerHTML += h1('3번째 js 태그')
+    </script>
+    <h1 id="h1_2">2번째 h1 태그</h1>
+    <img class = 'rect'>
+    <img class = 'rect'>
+    <img class = 'rect'>
+    <img class = 'rect'>
+
+    
+</body>
+</html>
