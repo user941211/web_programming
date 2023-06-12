@@ -64,6 +64,22 @@
 
                 h1_count.textContent = `선택 : ${options[index].textContent}`
             })
+
+            //const select = doucment.querySelector('select')
+            const p = documnet.querySelector('p')
+
+            select.addEventListener('change', (event) => {
+                const options = event.currentTarget.options
+                const index = evnet.currentTarget.options.selectedIndex
+                const list = []
+                for(const option of options){
+                    if(option.selected){
+                        list.push(option[index].textContent)
+                    }
+                }
+                p.textContent = `선택 : ${list.join(',')}`
+            })
+
         })
     </script>
     <!--header에 있는 addEventListener로 작업함-->
@@ -76,14 +92,15 @@
     <h1 id="h1_click">클릭 횟수 : 0</h1>
     <h1 id="h1_count">글자 수 : 0</h1>
     <textarea></textarea>
-    <p></p>
-    <select>
+    <p>선택 : 떡복이</p>
+    <select multiple>
         <option>순대</option>
         <option>오뎅</option>
         <option>떡복이</option>
         <option>튀김</option>
         <option>콜라</option>
     </select>
+    <p></p>
     <script>
         document.body.innerHTML += h1('2번째 js 태그')
     </script>
